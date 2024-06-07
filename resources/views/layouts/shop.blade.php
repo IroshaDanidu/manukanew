@@ -2,22 +2,49 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Online store Med-Dev</title>
+    <title>TechWorld</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{ asset('sh/assets/css/fontawesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('sh/assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('sh/assets/css/owl.css') }}">
+    <link rel="stylesheet" href="{{ asset('/sh/assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('/sh/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/sh/assets/css/owl.css') }}">
+    <style>
+        .navbar-brand b {
+            color: lightgreen;
+        }
+        .navbar-nav .nav-link:hover {
+            color: lightgreen;
+        }
+        .navbar-brand img {
+            margin-left: 10px;
+            height: 100px; /* Adjust the height as needed */
+        }
+        .hero-section {
+            position: relative;
+            background: url('images/banner.jpg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: black;
+        }
+        .hero-section h1 {
+            font-size: 48px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,7 +53,11 @@
 <header class="">
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><h2>Med-Dev<em>.</em></h2></a>
+
+            <a class="navbar-brand" href="index.html">
+
+                <img src="{{ asset('images/techworld-high-resolution-logo-removebg-preview (1).png') }}" alt="Logo">
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,39 +66,44 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="/shop">Products
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/cart">Cart
-                        </a>
+                        <a class="nav-link" href="/cart">Cart</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="checkout.html">Checkout</a>
                     </li>
-
-{{--                    <li class="nav-item dropdown">--}}
-{{--                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>--}}
-
-{{--                        <div class="dropdown-menu">--}}
-{{--                            <a class="dropdown-item" href="about.html">About Us</a>--}}
-{{--                            <a class="dropdown-item" href="blog.html">Blog</a>--}}
-{{--                            <a class="dropdown-item" href="testimonials.html">Testimonials</a>--}}
-{{--                            <a class="dropdown-item" href="terms.html">Terms</a>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="contact.html">Contact Us</a>--}}
-{{--                    </li>--}}
+                    <li class="nav-item d_none">
+                        @if (Route::has('login'))
+                            <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                                @auth
+                                    <a style="color: #000;" href="{{ url('/dashboard') }}" class="font-semibold text-black-0000 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                                        <p>Hi, {{Auth::user()->name}}</p>
+                                    </a>
+                                @else
+                                    <a style="color: #000;" href="{{ route('login') }}" class="font-semibold text-black-0000 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                                    @if (Route::has('register'))
+                                        <a style="color: #000;" href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                    @endif
+                                @endauth
+                            </div>
+                        @endif
+                    </li>
                 </ul>
+
             </div>
         </div>
     </nav>
 </header>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <h1 style="background-image: {{ asset('images/techworld-high-resolution-logo-removebg-preview (1).png') }}; ">Browse Our Products!</h1>
+</section>
 
 {{$slot}}
 
@@ -86,7 +122,6 @@
                 <div class="copyright-text">
                     <p>
                         Copyright © 2020 Company Name
-{{--                        | Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>--}}
                     </p>
                 </div>
             </div>

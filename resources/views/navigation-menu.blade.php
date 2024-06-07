@@ -6,9 +6,9 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="/">
-                        <img src="https://media.istockphoto.com/id/1063818266/vector/caduceus-black-isolated-vector-icon-symbol-of-medicine-icon.jpg?s=612x612&w=0&k=20&c=sWIW3Bv_DKXsXdtdZR9Z8p-HlB51JXhR7pUKHoUn_2Y=" alt="logo" width="60px" height="60px">
+                        <img src="images/techworld-high-resolution-logo-removebg-preview (1).png" alt="logo" width="150px" height="150px">
                     </a>
-                
+
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex" style="margin-right: 20%;">

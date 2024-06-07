@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\StripeController;
 use App\Http\Controllers\UserController;
 
+use App\Http\Controllers\StripeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +24,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/about', function () {
-    return view('about');
-});
+// Route::get('/about', function () {
+//     return view('about');
+// });
 
 Route::get('/service', function () {
     return view('service');
@@ -42,7 +42,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('/dashboard');
     })->name('dashboard');
     Route::resource(
         'product-category',
@@ -64,16 +64,7 @@ route::resource('product-category', \App\Http\Controllers\ProductCategoryControl
 // });
 Route::get('/admin', 'App\Http\Controllers\DashboardController@view');
 
-//user
-Route::get('users', 'App\Http\Controllers\UserController@users');
-Route::get('view-user/{id}', 'App\Http\Controllers\UserController@viewUser');
-Route::get('edit-user/{id}', 'App\Http\Controllers\UserController@editUser');
-Route::get('edituser/{id}', 'App\Http\Controllers\UserController@updateUser');
-Route::put('/user/{id}', [UserController::class, 'update'])->name('user.update');
-Route::delete('/deleteuser/{id}', [UserController::class, 'destroy'])->name('user.destroy');
-Route::GET('/createuser', 'App\Http\Controllers\UserController@create');
 
-Route::post('/userstore', [UserController::class, 'store']);
 
 //shop
 
@@ -122,13 +113,12 @@ Route::GET('/create', 'App\Http\Controllers\ProductController@ccc');
 
 use App\Http\Controllers\ProductController;
 
-// Route::post('/store', [ProductController::class, 'store'])->name('product.store');
+Route::post('/store', [ProductController::class, 'store'])->name('product.store');
 
 
 Route::get('payment/{id}/{total}', [StripeController::class, 'session'])->name('stripe.payment');
 Route::get('success', [StripeController::class, 'success'])->name('success');
 Route::get('checkout', [StripeController::class, 'checkout'])->name('checkout');
-Route::post('/newsave', [ProductController::class, 'store'])->name('newsave');
 
 //orders
 Route::get('orders', 'App\Http\Controllers\OrderController@index');
@@ -136,3 +126,15 @@ Route::get('orders', 'App\Http\Controllers\OrderController@index');
     Route::get('orderadmion/{id}', 'App\Http\Controllers\OrderController@viewOrder');
     Route::put('order-update/{id}', 'App\Http\Controllers\OrderController@update');
     Route::get('orderhistory', 'App\Http\Controllers\OrderController@orderhistory');
+
+
+    //user
+Route::get('users', 'App\Http\Controllers\UserController@users');
+Route::get('view-user/{id}', 'App\Http\Controllers\UserController@viewUser');
+Route::get('edit-user/{id}', 'App\Http\Controllers\UserController@editUser');
+Route::get('edituser/{id}', 'App\Http\Controllers\UserController@updateUser');
+Route::put('/user/{id}', [UserController::class, 'update'])->name('user.update');
+Route::delete('/deleteuser/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+Route::GET('/createuser', 'App\Http\Controllers\UserController@create');
+
+Route::post('/userstore', [UserController::class, 'store']);

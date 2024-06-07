@@ -223,7 +223,7 @@ header .navbar {
 .navbar .navbar-brand h2 em {
 	font-size: 44px;
 	font-style: normal;
-	color: #e83434;
+	color: #f48840;
 }
 #navbarResponsive {
 	z-index: 999;
@@ -255,7 +255,7 @@ header .navbar {
 }
 .navbar .navbar-toggler {
 	border-color: #fff;
-	background-color: #dd3030;
+	background-color: #f48840;
 	height: 46px;
 	outline: none;
 	border-radius: 0px;
@@ -1120,14 +1120,14 @@ footer p a:hover {
 }
 
 .btn-primary {
-	border-color: #e81919;
-	background-color: #dc2222;
+	border-color: #f48840;
+	background-color: #f48840;
 }
 
 .btn-primary:focus,
 .btn-primary:hover {
-	border-color: rgb(253 61 87 / var(--tw-bg-opacity));
-	background-color: #a70e0e;
+	border-color: #fb9857;
+	background-color: #fb9857;
 }
 
 .dropdown-item.active,

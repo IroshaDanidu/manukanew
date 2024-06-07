@@ -124,7 +124,6 @@ class ProductController extends Controller
 
     }
 
-   
     public function store(Request $request)
     {
         // Validate the form data
@@ -138,10 +137,10 @@ class ProductController extends Controller
 
         // Handle file upload
         if ($request->hasFile('image')) {
-            $imageName = time() . '.' . $request->image->extension();
+            $imageName = time().'.'.$request->image->extension();
             $request->image->move(public_path('images'), $imageName);
         } else {
-            $imageName = 'noimage.jpg';
+            $imageName = null;
         }
 
         // Create a new product
@@ -157,5 +156,4 @@ class ProductController extends Controller
 
         return redirect()->back()->with('success', 'Product created successfully.');
     }
-
 }

@@ -1,6 +1,6 @@
 <x-admin-layout>
-<form action="{{ route('newsave') }}" method="post" enctype="multipart/form-data">
-@csrf
+    <form action="{{ url('store') }}" method="post" enctype="multipart/form-data">
+        @csrf
         <div class="form-group">
             <label for="name">Product Name</label>
             <input type="text" name="name" class="form-control" value="{{ old('name') }}" id="name" placeholder="Enter Product Name" required>

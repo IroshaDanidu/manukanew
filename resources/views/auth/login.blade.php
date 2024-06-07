@@ -3,8 +3,9 @@
 
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+            <img src = "images/techworld-high-resolution-logo-removebg-preview (1).png">
+                <x-authentication-card-logo />
+            </x-slot>
 
         <x-validation-errors class="mb-4" />
 

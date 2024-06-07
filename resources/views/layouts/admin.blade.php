@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Med-Dev ADMIN</title>
+    <title>TechWorld Admin Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -36,7 +36,7 @@
                     <i class="fas fa-laugh-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">
-                    <img src="https://media.istockphoto.com/id/1063818266/vector/caduceus-black-isolated-vector-icon-symbol-of-medicine-icon.jpg?s=612x612&w=0&k=20&c=sWIW3Bv_DKXsXdtdZR9Z8p-HlB51JXhR7pUKHoUn_2Y=" alt="Logo" class="logo"> Med-Dev
+                    <img src="images/techworld-high-resolution-logo-removebg-preview (1).png" alt="Logo" class="logo"> TechWorld
                 </div>
             </a>
 
@@ -50,16 +50,22 @@
                     <span>Dashboard</span></a>
             </li>
 
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Product Catagerory</span></a>
+            </li> --}}
 
             <li class="nav-item">
                 <a class="nav-link" href="{{url('creste')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Product</span></a>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('orders') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Orders</span></a>
+                    <span>Order</span></a>
             </li>
             
             <li class="nav-item">
@@ -249,7 +255,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">ADMIN</span>
-                                <img class="img-profile rounded-circle" src="https://media.istockphoto.com/id/1063818266/vector/caduceus-black-isolated-vector-icon-symbol-of-medicine-icon.jpg?s=612x612&w=0&k=20&c=sWIW3Bv_DKXsXdtdZR9Z8p-HlB51JXhR7pUKHoUn_2Y=">
+                                <img class="img-profile rounded-circle" src="assets\images\NEW.jpg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

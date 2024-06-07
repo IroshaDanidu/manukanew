@@ -24,7 +24,6 @@ class StripeController extends Controller
         $totalInCents = $total * 100;
 
         $session = Session::create([
-            'payment_method_types' => ['card'], // Specify payment method types
             'line_items' => [
                 [
                     'price_data' => [
@@ -49,7 +48,7 @@ class StripeController extends Controller
     {
         // return "Thanks for your order! You have just completed your payment. The seller will reach out to you as soon as possible.";
 
-        // return redirect()->to('/checkout')->with('success', 'Order Placed Successfully');
+        return redirect()->to('/checkout')->with('success', 'Order Placed Successfully');
 
     }
 }
